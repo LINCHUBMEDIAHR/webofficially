@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINC HUB - Lidya Network & Connect</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f0; /* soft pink */
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffd6e7; /* lebih pekat pink */
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ffb6d9;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #a6005c;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #a6005c;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 12px;
+      border: none;
+      background: #a6005c;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7a0042;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffd6e7;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="LAMBANG.jpeg" alt="LINC HUB Logo">
+    <h1>LINC HUB</h1>
+    <p>Lidya Network & Connect</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#vendor">Vendor</a>
+    <a href="#client">Client</a>
+    <a href="#review">Review</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>About LINC Hub</h2>
+    <div class="card">
+      <p>
+        LINC Hub is a professional freelance partner network and project hub designed to help companies identify top talent, fill strategic positions, and develop high-performing teams efficiently. 
+      </p>
+      <p>
+        We connect businesses and project teams with experienced professionals in HR, management, and leadership through a commission-based system, ensuring that every project is executed professionally and at scale.
+      </p>
+      <ul>
+        <li>Professional Freelance Partner Network</li>
+        <li>Project Hub for HR, Management, and Leadership</li>
+        <li>Commission-Based Business Model</li>
+        <li>Efficiency & Professionalism at Scale</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="vendor">
+    <h2>Vendors</h2>
+    <div class="card">
+      <p>We collaborate with trusted vendors who share our commitment to professionalism, transparency, and quality. Vendors are key partners in delivering sustainable HR and business solutions.</p>
+    </div>
+  </section>
+
+  <section id="client">
+    <h2>Clients</h2>
+    <div class="card">
+      <p>We help clients find the right professionals, onboard talent, and build sustainable systems that ensure growth and long-term collaboration. Our only upfront fee is the <strong>Booking Fee</strong> (for screening, filtering, and candidate sharing). Partnership fee is applied only after project completion and successful onboarding.</p>
+    </div>
+  </section>
+
+  <section id="review">
+    <h2>Reviews</h2>
+    <div class="card">
+      <p>⭐ Candidate Review: "LINC Hub guided me to the right project with professionalism."</p>
+      <p>⭐ Vendor Review: "Working with LINC Hub ensures structured and efficient collaboration."</p>
+      <p>⭐ Client Review: "We found the perfect fit for our HR needs. Efficient and trustworthy!"</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="card">
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="business" placeholder="Business Name" required>
+        <input type="text" name="purpose" placeholder="Hiring Purpose" required>
+        <button type="submit">Send Inquiry</button>
+      </form>
+      <p style="margin-top:10px; font-size:14px; color:#555;">Your inquiries will be sent to <strong>lincmediaconnect@yahoo.com</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 LINC HUB - Lidya Network & Connect</p>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // ganti dengan public key EmailJS kamu
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+        .then(function() {
+          alert("Inquiry sent successfully!");
+        }, function(error) {
+          alert("Failed to send inquiry. Please try again.");
+          console.log(error);
+        });
+    });
+  </script>
+
+</body>
+</html>
